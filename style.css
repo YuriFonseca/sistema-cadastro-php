@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, rgb(86, 58, 151), rgb(64, 14, 97));
+    background-image: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
     color: white;
 }
 
@@ -9,14 +9,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgb(50, 57, 63);
     padding: 15px;
     border-radius: 15px;
     width: 20%;
 }
 
 #submit {
-    background-image: linear-gradient(to right, rgb(86, 58, 151), rgb(64, 14, 97));
+    background-image: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
     width: 100%;
     padding: 15px;
     color: white;
@@ -27,7 +27,10 @@ body {
 }
 
 #submit:hover {
-    background-image: linear-gradient(to right, rgb(60, 40, 107), rgb(41, 9, 63));
+    background-image: linear-gradient(to right, rgb(37, 117, 252), rgb(106, 17, 203));
+    color:aqua;
+    cursor: pointer;
+    font-size: 15.5px;
 }
 
 
@@ -50,7 +53,7 @@ body {
 .inputUser:valid ~ .inputLabel {
     top: -20px;
     font-size: 12px;
-    color: darkorchid;
+    color: rgb(106, 17, 203);
 }
 
 .inputLabel {
@@ -62,14 +65,14 @@ body {
 }
 
 fieldset {
-    border: 3px solid darkorchid;
+    border: 3px solid rgb(37, 117, 252);
 }
 
 legend {
-    border: 1px solid darkorchid;
+
     padding: 10px;
     text-align: center;
-    background-color: darkorchid;
+    background-image: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
     border-radius: 7px;
 
 }

@@ -33,14 +33,16 @@
         $cep = $_POST['cep'];
         $cnpj = $_POST['cnpj'];
         $email = $_POST['email'];
+        $password = $_POST['email'];
         $status = TRUE;
         $data = date('Y/m/d');
-
-
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,endereco,numero,bairro,cidade,estado,cep,cnpj,email,status,data) 
-        VALUES('$nome','$endereco','$numero','$bairro','$cidade','$estado','$cep','$cnpj','$email','$status','$data')");
+        
+        
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,endereco,numero,bairro,cidade,estado,cep,cnpj,email,password,status,data) 
+        VALUES('$nome','$endereco','$numero','$bairro','$cidade','$estado','$cep','$cnpj','$email',md5('$password'),'$status','$data')");
+        echo  "<script>alert('Cadastro efetuado com sucesso!');</script>";
     }
-    echo  "<script>alert('Cadastro efetuado com sucesso!');</script>";
+
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +103,11 @@
                 <div class="inputBox">
                     <input type="text" name="email" id="email" class="inputUser" required>
                     <label for="email" class="inputLabel">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="password" id="password" class="inputUser" required>
+                    <label for="password" class="inputLabel">Senha</label>
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">

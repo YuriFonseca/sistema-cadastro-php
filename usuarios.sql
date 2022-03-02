@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Fev-2022 às 14:33
+-- Tempo de geração: 02-Mar-2022 às 13:05
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -31,16 +31,24 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `endereco` varchar(70) NOT NULL,
-  `numero` int(11) NOT NULL,
+  `numero` varchar(7) NOT NULL,
   `bairro` varchar(60) NOT NULL,
   `cidade` varchar(60) NOT NULL,
   `estado` varchar(60) NOT NULL,
   `cep` int(11) NOT NULL,
   `cnpj` int(11) NOT NULL,
   `email` varchar(90) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `data` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `endereco`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `cnpj`, `email`, `password`, `status`, `data`) VALUES
+(11, 'moreira', 'moreira', '213123', 'moreira', 'moreira', 'moreira', 21321, 321321, 'morreira@moreira.com', 'c5ebcd6b0ac78dd7a4b9ebf65107e7', 1, '2022-02-28');
 
 --
 -- Índices para tabelas despejadas
@@ -60,7 +68,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
