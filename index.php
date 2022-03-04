@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +33,12 @@
 
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Entre com seu e-mail e senha!</p>
+                <?php
+                  if(isset($_SESSION['nao_autenticado'])){
+                    echo  "<script>alert('E-mail ou Senha Incorreto!');</script>";
+                  }
+                unset($_SESSION['nao_autenticado']);
+                ?>
 
                 <div class="form-outline form-white mb-4">
                   <input type="email" name ="email" id="email" class="form-control form-control-lg" />

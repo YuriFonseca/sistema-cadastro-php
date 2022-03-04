@@ -1,5 +1,6 @@
 <?php
 
+    
     if(isset($_POST['submit']))
     {
 
@@ -33,7 +34,7 @@
         $cep = $_POST['cep'];
         $cnpj = $_POST['cnpj'];
         $email = $_POST['email'];
-        $password = $_POST['email'];
+        $password = $_POST['password'];
         $status = TRUE;
         $data = date('Y/m/d');
         
