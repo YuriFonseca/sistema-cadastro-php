@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Mar-2022 às 13:05
+-- Tempo de geração: 04-Mar-2022 às 15:43
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -38,17 +38,20 @@ CREATE TABLE `usuarios` (
   `cep` int(11) NOT NULL,
   `cnpj` int(11) NOT NULL,
   `email` varchar(90) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(32) NOT NULL,
   `status` tinyint(1) DEFAULT NULL,
-  `data` date DEFAULT NULL
+  `data` date DEFAULT NULL,
+  `telefone` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `endereco`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `cnpj`, `email`, `password`, `status`, `data`) VALUES
-(11, 'moreira', 'moreira', '213123', 'moreira', 'moreira', 'moreira', 21321, 321321, 'morreira@moreira.com', 'c5ebcd6b0ac78dd7a4b9ebf65107e7', 1, '2022-02-28');
+INSERT INTO `usuarios` (`id`, `nome`, `endereco`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `cnpj`, `email`, `password`, `status`, `data`, `telefone`) VALUES
+(16, 'teste', 'teste', '123', 'teste', 'teste', 'teste', 213213, 312321, 'teste@teste.com', 'aa1bf4646de67fd9086cf6c79007026c', 1, '2022-03-04', ''),
+(17, 'admin', 'adminadmin', '123', 'admin', 'adminadmin', 'SP', 123231, 132213, 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2022-03-04', '1321321321'),
+(18, 'admin', 'adminadmin', '123', 'admin', 'adminadmin', 'SP', 123231, 132213, 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2022-03-04', '1321321321');
 
 --
 -- Índices para tabelas despejadas
@@ -68,7 +71,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
