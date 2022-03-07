@@ -32,12 +32,9 @@ include('verifica.php');
         else{
           header('Location: painel.php');
         }
-        
+    }
     else{
       header('Location: painel.php');
-      
-    }
-
     }
 
 ?>
