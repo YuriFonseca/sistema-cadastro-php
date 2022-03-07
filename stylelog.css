@@ -19,3 +19,11 @@ body {
   font-size: 19px;
   color: rgb(59, 67, 102);
 }
+
+.table.table.text-white.table-bg {
+  background: rgba(0,0,0,0.3);
+}
+
+.table-bg{
+  background: rgba(0,0,0,0.2);
+}
