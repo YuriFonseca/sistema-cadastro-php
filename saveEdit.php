@@ -17,7 +17,7 @@
         $password = $_POST['password'];
 
 
-        $sqlUpdate = "UPDATE usuarios SET nome='$nome', endereco='$endereco', telefone='$telefone', numero='$numero', bairro='$bairro', cidade='$cidade', estado='$estado', cep='$cep', cnpj='$cnpj', email='$email', password='$password' 
+        $sqlUpdate = "UPDATE usuarios SET nome='$nome', endereco='$endereco', telefone='$telefone', numero='$numero', bairro='$bairro', cidade='$cidade', estado='$estado', cep='$cep', cnpj='$cnpj', email='$email', password=md5('$password') 
         WHERE id='$id'";
 
         $result = $conexao->query($sqlUpdate);

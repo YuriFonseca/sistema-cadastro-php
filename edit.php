@@ -9,7 +9,7 @@ include('verifica.php');
 
         $id = $_GET['id'];
 
-        $sqlSelect = "SELECT * FROM usuarios WHERE id =$id";
+        $sqlSelect = "SELECT * FROM usuarios  WHERE id =$id";
 
         $result = $conexao ->query($sqlSelect);
 
@@ -46,39 +46,54 @@ include('verifica.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Cadastro</title>
-     <!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+        <link rel="stylesheet" type="text/css" href="nav.css">
 
-    <link rel="stylesheet" type="text/css" href="stylelog.css">
-    <link rel="stylesheet" type="text/css" href="nav.css">
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark justify-content-center">
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="http://127.0.0.1/painel.php#">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="http://127.0.0.1/formulario.php#">Cadastro</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link disabled" href="logout.php" tabindex="-1" aria-disabled="true">Logout</a>
-  </li>
-</ul>
+<nav class="navbar navbar-light bg-light shadow">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Logo</span>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 </nav>
 
+<div class="modal true" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">MENU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
-<section class="vh-100 gradient-custom">
-   <form action="saveEdit.php" method="POST">
+      <ul class="list-group list-group-flush">
+      <a class='linka' href='painel.php'><li class="list-group-item">HOME</li></a>
+      <a href='formulario.php'><li class="list-group-item">Cadastro</li></a>
+      <a class='linka' href='painel.php'><li class="list-group-item">APLICATIVO</li></a>
+      <a class='linka' href='painel.php'><li class="list-group-item">CONTATOS</li></a>
+          <a href='logout.php'> <li class="list-group-item">Logout</li></a>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <form action="formulario.php" method="POST">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-8 col-lg-12 col-xl-20">
+        <div class="col-12 col-md-8 col-lg-12 col-xl-9">
           <div class="card bg-dark text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-left">
 
@@ -87,7 +102,7 @@ include('verifica.php');
                 <h2 class="fw-bold mb-2 text-uppercase text-center">Cadastro de Clientes</h2>
                 <br><br>
 
-<div class="form-row">
+<div class="row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
       <input type="email" name='email' class="form-control" value='<?php echo $email ?>' id="inputEmail4" placeholder="Email">
@@ -109,7 +124,7 @@ include('verifica.php');
     <label for="inputAddress">Endereço</label>
     <input type="text" name='endereco' class="form-control" id="inputAddress" value='<?php echo $endereco ?>' placeholder="Nome da rua">
   </div>
-  <div class="form-row">
+  <div class="row">
   <div class="form-group col-md-6">
       <label for="inputBairro">Bairro</label>
       <input type="text" name='bairro' class="form-control" id="inputBairro" value='<?php echo $bairro ?>' placeholder="Bairro">
